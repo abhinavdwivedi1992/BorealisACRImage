@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
+FROM acr5borealis.azurecr.io/aspnet AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
+FROM acr5borealis.azurecr.io/sdk AS build
 WORKDIR /src
 COPY ["HCLPaasCoe.csproj", ""]
 RUN dotnet restore "HCLPaasCoe.csproj"
